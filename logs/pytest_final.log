@@ -1,0 +1,73 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /home/song/projects/30day-lab/NetTestLab/python_tests/.venv/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.3', 'Platform': 'Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.39', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'html': '4.2.0', 'timeout': '2.4.0', 'metadata': '3.1.1'}}
+rootdir: /home/song/projects/30day-lab/NetTestLab/python_tests
+configfile: pytest.ini
+plugins: html-4.2.0, timeout-2.4.0, metadata-3.1.1
+collecting ... collected 23 items
+
+tests/test_boundary.py::test_speed_boundary[-1-False] speed: -1 response: {'code': '422', 'message': 'speed must be in [0, 5000]'}
+PASSED
+tests/test_boundary.py::test_speed_boundary[0-True] speed: 0 response: {'code': '0', 'message': 'PARAM_OK'}
+PASSED
+tests/test_boundary.py::test_speed_boundary[5000-True] speed: 5000 response: {'code': '0', 'message': 'PARAM_OK'}
+PASSED
+tests/test_boundary.py::test_speed_boundary[5001-False] speed: 5001 response: {'code': '422', 'message': 'speed must be in [0, 5000]'}
+PASSED
+tests/test_boundary.py::test_duration_boundary[0-False] duration: 0 {'code': '422', 'message': 'duration must be in [1, 60]'}
+PASSED
+tests/test_boundary.py::test_duration_boundary[1-True] duration: 1 {'code': '0', 'message': 'PARAM_OK'}
+PASSED
+tests/test_boundary.py::test_duration_boundary[60-True] duration: 60 {'code': '0', 'message': 'PARAM_OK'}
+PASSED
+tests/test_boundary.py::test_duration_boundary[61-False] duration: 61 {'code': '422', 'message': 'duration must be in [1, 60]'}
+PASSED
+tests/test_concurrent.py::test_50_concurrent_clients total=100, success=100, failed=0
+PASSED
+tests/test_disconnect.py::test_partial_packet_then_disconnect_does_not_crash_server health check response: {'code': '0', 'message': 'PONG'}
+PASSED
+tests/test_exception.py::test_invalid_parameter[speed=1000] input: speed=1000 response: {'code': '422', 'message': 'duration must be in [1, 60]'}
+PASSED
+tests/test_exception.py::test_invalid_parameter[speed=abc;duration=2] input: speed=abc;duration=2 response: {'code': '422', 'message': 'speed must be in [0, 5000]'}
+PASSED
+tests/test_exception.py::test_invalid_parameter[speed=1000;duration=test] input: speed=1000;duration=test response: {'code': '422', 'message': 'duration must be in [1, 60]'}
+PASSED
+tests/test_exception.py::test_invalid_parameter[] input:  response: {'code': '422', 'message': 'speed must be in [0, 5000]'}
+PASSED
+tests/test_function.py::test_set_param_start_and_finish SET_PARAM response: {'code': '0', 'message': 'PARAM_OK'}
+START_TASK response: {'code': '0', 'message': 'STARTED'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '1', 'result': 'NONE', 'total_requests': '117', 'success_requests': '108'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '9', 'result': 'NONE', 'total_requests': '118', 'success_requests': '109'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '16', 'result': 'NONE', 'total_requests': '119', 'success_requests': '110'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '22', 'result': 'NONE', 'total_requests': '120', 'success_requests': '111'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '29', 'result': 'NONE', 'total_requests': '121', 'success_requests': '112'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '36', 'result': 'NONE', 'total_requests': '122', 'success_requests': '113'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '43', 'result': 'NONE', 'total_requests': '123', 'success_requests': '114'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '49', 'result': 'NONE', 'total_requests': '124', 'success_requests': '115'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '56', 'result': 'NONE', 'total_requests': '125', 'success_requests': '116'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '63', 'result': 'NONE', 'total_requests': '126', 'success_requests': '117'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '69', 'result': 'NONE', 'total_requests': '127', 'success_requests': '118'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '76', 'result': 'NONE', 'total_requests': '128', 'success_requests': '119'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '83', 'result': 'NONE', 'total_requests': '129', 'success_requests': '120'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '89', 'result': 'NONE', 'total_requests': '130', 'success_requests': '121'}
+GET_STATUS: {'code': '0', 'state': 'RUNNING', 'speed': '1200', 'duration': '3', 'progress': '96', 'result': 'NONE', 'total_requests': '131', 'success_requests': '122'}
+GET_STATUS: {'code': '0', 'state': 'FINISHED', 'speed': '1200', 'duration': '3', 'progress': '100', 'result': 'OK', 'total_requests': '132', 'success_requests': '123'}
+PASSED
+tests/test_protocol.py::test_unknown_command_returns_400 PASSED
+tests/test_protocol.py::test_bad_magic_does_not_crash_server PASSED
+tests/test_protocol.py::test_two_packets_sent_together_are_both_parsed PASSED
+tests/test_protocol.py::test_one_packet_split_into_two_sends PASSED
+tests/test_smoke.py::test_heartbeat PASSED
+tests/test_smoke.py::test_get_status PASSED
+tests/test_stability.py::test_1000_heartbeat_requests completed 200/1000 requests
+completed 400/1000 requests
+completed 600/1000 requests
+completed 800/1000 requests
+completed 1000/1000 requests
+PASSED
+tests/test_timeout.py::test_client_timeout_and_server_recovery recovery heartbeat: {'code': '0', 'message': 'PONG'}
+PASSED
+
+- Generated html report: file:///home/song/projects/30day-lab/NetTestLab/reports/pytest_report_20261010_130642.html -
+============================= 23 passed in 48.82s ==============================

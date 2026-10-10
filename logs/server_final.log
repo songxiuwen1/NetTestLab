@@ -1,0 +1,3 @@
+[SERVER] Server started, port=9000, workers=4
+[SERVER] Waiting for clients... Press Ctrl+C to stop.
+[SERVER] RecvPacket stopped: invalid magic

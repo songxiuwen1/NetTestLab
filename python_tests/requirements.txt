@@ -1,0 +1,11 @@
+# pytest：自动化测试框架
+pytest
+
+# pytest-html：后面生成HTML测试报告
+pytest-html
+
+# pytest-timeout：给测试设置超时，避免用例永久卡死
+pytest-timeout
+
+# psutil：后面监控CPU和内存
+psutil

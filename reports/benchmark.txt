@@ -1,0 +1,11 @@
+==============================================
+Concurrent Benchmark
+==============================================
+workers          : 50
+total requests   : 500
+success          : 500
+success rate     : 100.00%
+average latency  : 10.54 ms
+P95 latency      : 13.11 ms
+max latency      : 36.69 ms
+throughput       : 3141.48 req/s
